@@ -8,7 +8,7 @@
 }
 
 .picture:hover {
-  filter: brightness(80%);
+  filter: brightness(50%);
 }
 
 .picture-container {
@@ -16,7 +16,7 @@
   flex-wrap: wrap;
   width: 80%;
   margin: auto;
-  gap: 15px;
+  gap: 50px;
 }
 
 body {
@@ -36,7 +36,8 @@ h1 {
 }
 
 h2 {
-  text-align: center;
+  width: 80%;
+  margin: auto;
 }
 
 .center {
@@ -60,5 +61,14 @@ h2 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 200px;
+  width: 300px;
 }
+
+.bio-picture:hover {
+  filter: brightness(50%);
+}
+
+.image-title:hover {
+  font-size: 36px;
+}
+
