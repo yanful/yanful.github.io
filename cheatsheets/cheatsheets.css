@@ -1,8 +1,8 @@
 .picture {
-  width: 300px;
+  width: 400px;
   border-radius: 10px;
   object-fit: cover;
-  aspect-ratio: 1;
+  aspect-ratio: 0.8;
 }
 
 .bio-container {
@@ -60,4 +60,21 @@ nav ul li a::after{
 
 nav ul li a:hover::after{
   width: 100%;
+}
+
+h2{
+  margin-left: 10%;
+  margin-top: 0;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.intro-paragraph{
+  margin: 5%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.intro-paragraph ul h3{
+  font-size: 30px;
+  font-weight: 400;
 }
