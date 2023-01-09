@@ -16,18 +16,71 @@
     </div>
     <div class="bio-container">
       <div class="row">
-        <img class="picture" src="WechatIMG365.jpeg"/>
-        <div class="Bio-title"><h1>About Me</h1></div>
-      </div>
-      <div>
-        <h2>HELLO EVERYONE!!!</h2>
-        <p class="intro-paragraph">
-          From being interested in HCI to being the Research Assistant, 
-          Teaching Assistant and UX Designer, I’d like to face more 
-          challenging duties designing things that are 
-          human-centered, not only user centered.
-        </p>
+        <div class="picture">
+          <img src="WechatIMG365.jpeg"/>
+        </div>
+        <div class="image-title">
+          <h1 class="subtitle">About Me</h1>
+          <p>I'm HCDE Junior student, Teaching Assistantin, and Research Assistant in University of Washington. </p>
+          <p>Focusing on UX Design and like to face more 
+            challenging duties designing things that are 
+            human-centered, not only user centered.
+          </p>
+            <div class="tab">
+              <p class="tablink active-link" onclick="opentab('Interest')">Interest</p>
+              <p class="tablink" onclick="opentab('Experience')">Experience</p>
+              <p class="tablink" onclick="opentab('Education')">Education</p>
+            </div>
+            <div class="content active" id="Interest">
+              <ul>
+                <li><span>UX</span><br>Research & Design Web/app</li>
+                <li><span>NLP</span><br>Natural Language Process</li>
+                <li><span>Research</span><br>Qualitative & Quantitative Data Analysis</li>
+              </ul>
+            </div>
+            <div class="content" id="Experience">
+              <ul>
+                <li><span>Teaching Assistant</span><br>• Leading a 2-hour lab section/week to guide students in Python
+                  <br>• Holding regular office hours to answer questions
+                  <br>• Grading Assignment and respond to course-related e-mail</li>
+                <li><span>Research Assistant in NLP</span><br>• Collaborating to work on the Emotion Classifier and Offensive language detection under Prof. Cecilia Aragon
+                  <br>• Researching on my personal project: Compare post-editing and neural machine translation in Mandarin-English translation</li>
+                <li><span>Research Assistant Group Leader</span><br>• Researching the relationship between climate change, environmental sustainability,
+                  and the field of computer education
+                  <br>• Leading a group collect survey data from questionnaire to study CS students' attitudes
+                  towards incorporating climate change into their education
+                  <br>• Analyzing the qualitative data - interview transcript to study how students from different
+                  majors can apply what they learn from college education to sustainable development
+                  <br>• Evaluating of different types of articles</li>
+              </ul>
+            </div>
+            <div class="content" id="Education">
+              <ul>
+                <li><span>University of Washington</span><br>Bachelor of Science, Human Centered Design and Engineering (HCDE) GPA: 3.93
+                <li><span>Relevant coursework: </span>
+                <br> - Interactive Systems Design and Technology, 
+                <br> - Qualitative and Quantitative data Analysis
+                <br> - Visual Communication in Human Centered Design</li>
+                </li>
+              </ul>
+            </div>
+        </div>
       </div>
     </div>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tablink");
+      var tabcontents = document.getElementsByClassName("content");
+      function opentab(tabname){
+        for(tablink of tablinks){
+          tablink.classList.remove("active-link")
+        }
+        for(tabcontent of tabcontents){
+          tabcontent.classList.remove("active")
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active")
+      }
+    </script>
   </body>
 </html>
