@@ -3,6 +3,7 @@
   border-radius: 10px;
   object-fit: cover;
   aspect-ratio: 0.8;
+  display: flex;
 }
 
 .bio-container {
