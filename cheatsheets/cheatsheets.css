@@ -1,5 +1,5 @@
 .picture {
-  width: 400px;
+  width: 300px;
   border-radius: 10px;
   object-fit: cover;
   aspect-ratio: 0.8;
@@ -8,6 +8,7 @@
 
 .bio-container {
   display: flex;
+  flex-wrap: wrap;
   width: 80%;
   margin: auto;
   margin-top: 5rem;
