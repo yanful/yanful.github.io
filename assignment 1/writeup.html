@@ -25,7 +25,8 @@
       </ul>
       <h2>Development Process</h2>
       <ol class="directions">
-        <li>Set up the manifest.json. Input the name, description,version, and link the file to default_popup and default_icon. Adding the content_scripts inside. </li>
+        <li>Set up the manifest.json. <br>
+          Input the name, description,version, and link the file to default_popup and default_icon. Adding the content_scripts inside. </li>
         <br>
         <div>
           <img
@@ -35,7 +36,8 @@
           <h2 style="text-align: center; font-size: 20px;">manifest page</h2>
         </div>
         <li>
-          Set up the HTML and CSS page. Link stylesheet href to css page. Link script src to javascript page.
+          Set up the HTML and CSS page. <br>
+          Link stylesheet href to css page. Link script src to javascript page.
         </li>
         <li>Set up popip container, input the icon of google doc and google sheet in the HTML. </li>
         <li>Set up the button that have “id” which link to javascript </li>
@@ -67,9 +69,13 @@
       </ol>
       <br>
       <br>
-    <h2>CSS Transition</h2>
+    <h2>Issue Deep-Dive</h2>
     <ol class="directions">
-      <li>For those images that link to sub-pages, when users drag their nouse to images, brightness will down to 50%;</li>
+      <li>The problem I encountered: <br>
+        - I couldn't make the icon and button at the same line<br>
+        - I insert the hyperlink inside of HTML inside of javascript. Then, the wen extension is not working. <br>
+        - Trying lots of way in javascript that want users could click button and link to google doc and google sheet. But the console continue tell me "Refused to execute inline event handler because it violates the following Content Security Policy directive"<br>
+      </li>
       <li>For those image titles, when users touch those texts, font-size will grow larger to 36px;</li>
       <br>
       <img
