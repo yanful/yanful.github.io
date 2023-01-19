@@ -73,25 +73,76 @@
     <ol class="directions">
       <li>The problem I encountered: <br>
         - I couldn't make the icon and button at the same line<br>
-        - I insert the hyperlink inside of HTML inside of javascript. Then, the wen extension is not working. <br>
+        - I insert the hyperlink inside of HTML inside of javascript. Then, the web extension is not working. <br>
         - Trying lots of way in javascript that want users could click button and link to google doc and google sheet. But the console continue tell me "Refused to execute inline event handler because it violates the following Content Security Policy directive"<br>
       </li>
-      <li>For those image titles, when users touch those texts, font-size will grow larger to 36px;</li>
       <br>
-      <img
-          class="Screenshot"
-          src="Screen_Recording_2023-01-05_at_8_15_57_PM_AdobeExpress.gif"
-        />
+      <li>How I resolved these issues: <br>
+        - For icon and button couldn't at the same line: <br>
+        I set up the icon's position as relative because "places an element relative to its current position without changing the layout around it" (from medium) <br>
+        <br>
+        - For web extension is not working: <br>
+        I delete the whole text with "&lt a &gt" hyperlink in HTML and replace it by "&lt button &gt". I decide to use sth like onclick="myFunction()" <br>
+        However, this is not allowed in chrome apps and extensions. I find the solution through stackoverflow and find the solution - using the "id" instead of onclick. <br>
+        <br>
+        Therefore, the HTML will look like <br>
+        <pre>
+          <code>
+            &ltbutton id="myButton">Click me&lt/button&gt
+          </code>
+        </pre>
+        
+        Inside of javascript: <br>
+        <pre>
+          <code>
+            document.getElementById("myButton").addEventListener("click", myFunction);
+            function myFunction(){
+              console.log('asd');
+            }
+            </code>
+        </pre>
+        - For "Refused to execute inline event handler because it violates the following Content Security Policy directive": <br>
+        I wasted a super long time - a week - try to find solution online. Finally, I found a useful suggestion that tell me to add the "location.href" and "window.open" inside of function<br>
+        So, I set up 2 id with 2 functions that link to Google Doc and Google sheet <br>
+        Inside of each function, I put the hyperlink inside like <pre>
+          <code>
+            function myFunction(){
+              console.log("hyperlink");
+              location.href = "hyperlink";
+              window.open("hyperlink");
+            };
+          </code>
+        </pre>
+        <div>
+          <img
+            class="Screenshot"
+            src="Js.png" 
+            style="width: 600px; aspect-ratio: 1.5;"
+          />
+          <h2 style="text-align: center; font-size: 20px;">javascript page</h2>
+        </div>
+      </li>
+      <br>
     </ol>
-    <br>
-    <br>
-    <h2>Idea and Future</h2>
-    <ol class="directions">
-      <li>Continue develop this webpage and add more CSS content inside, including the transition</li>
-      <li>For each project, create the individual sub-pages</li>
-      <li>Study how to make the icon and button</li>
-      <li>Study how to make search bar</li>
+    <h2>Ideas and Future Work</h2>
+      <ol class="directions">
+        <li>
+          Want to allow users to add the website by themselves
+        </li>
+        <li>
+          Users are able to click the icon with animation
+        </li>
+        <li>
+          When users add the website, that website's icon will automatically added in the extension
+        </li>
     </ol>
+    <h2>Kudos</h2>
+      <ul>
+        <li>
+          Solve the error in consolde: <br>
+          https://stackoverflow.com/questions/36324333/refused-to-execute-inline-event-handler-because-it-violates-csp-sandbox
+        </li>
+      </ul>
     </div>
   </body>
 </html>
