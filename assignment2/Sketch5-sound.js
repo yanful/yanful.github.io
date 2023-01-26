@@ -19,7 +19,7 @@ arc(400, 175, 190, 170, PI, TWO_PI)
 fill("red")
 arc(400, 195, 200, 170, PI, TWO_PI)
 fill(239, 154, 73)
-ellipse(400, 230, 280, 210) //帽框
+ellipse(400, 230, 280, 210) //hat
 
 
 //face
@@ -160,7 +160,7 @@ function mousePressed() {
       fill("red")
       arc(400, 195, 200, 170, PI, TWO_PI)
       fill(239, 154, 73)
-      ellipse(400, 230, 280, 210) //帽框
+      ellipse(400, 230, 280, 210) //hat
 
 
       //face
@@ -297,7 +297,7 @@ function mousePressed() {
       fill("red")
       arc(400, 195, 200, 170, PI, TWO_PI)
       fill(239, 154, 73)
-      ellipse(400, 230, 280, 210) //帽框
+      ellipse(400, 230, 280, 210) //hat
 
 
       //face
