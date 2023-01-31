@@ -96,13 +96,13 @@ function draw() {
   for (var i = 0; i < notes.length; i++) {
     var x = i * w;
     // If the mouse is over the key
-    if (mouseX > x && mouseX < x + w && mouseY < height) {
+    if (mouseX > x && mouseX < x + w && mouseY < height && mouseY > 200) {
       // If we're clicking
       if (mouseIsPressed) {
         fill(random(256),random(256),random(256));
       // Or just rolling over
       } else {
-        fill(256);
+        fill(240);
       }
     } else {
       fill(200);

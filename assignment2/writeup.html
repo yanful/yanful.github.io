@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./writeup.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <nav>
+        <ul>
+            <li><a href="/index.html" style="font-size: 30px; font-weight:bold;">Back</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="recipe-container">
+      <h2>Overview and Usage</h2>
+      <ul style="line-height: 1.5;">
+        <li>This p5.js coding have final sketch gallery and include a sketch in different categories:</li>
+        <li>Static, Random, Infinite Loop, Interactive, Audio, Audio and Visuals</li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen_Recording_2023-01-31_at_1_32_11_PM_AdobeExpress.gif"
+          />
+          <h2 style="text-align: center; font-size: 20px;">Gallery Gif</h2>
+        </div>
+      </ul>
+      <h2>Development Process</h2>
+      <ol class="directions">
+        <li>Set up the javascript. <br>
+          Find the recourses online, edit them in the p5js web editor. Then, save these coding into the javascript</li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="./picture/p5js web editor.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> p5js web editor page</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="./picture/javascript.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> p5js web editor page</h2>
+        </div>
+        <li>
+          Set up the HTML and CSS page for gallery <br>
+          Link stylesheet href to css page. Adding the gif for each category 
+        </li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="./picture/gallery.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Gallery's HTML</h2>
+        </div>
+        <li>Set up the HTML and CSS page for each sketch <br>
+            Set navigation that back to gallery page. Link script src to javascript page.
+        </li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="./picture/sketchE.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Sketch's HTML</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="./picture//sketchcss.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Sketch's CSS</h2>
+        </div>
+      </ol>
+      <br>
+      <br>
+    <h2>Issue Deep-Dive</h2>
+    <ol class="directions">
+      <li>The problem I encountered: <br>
+        - Sketch 2: I want to change colors on mouse click the button, but the color continue change even if I didn’t click the button<br>
+        - Sketch 2: I don't know how to add button that click to change color on HTML page<br>
+        - Sketch 3: I couldn't load image inside of ellipse<br>
+      </li>
+      <br>
+      <li>How I resolved these issues: <br>
+        - For change colors: <br>
+        Move JS code from function draw() to function setup() <br>
+        <br>
+        - For add change color button on HTML <br>
+        I use the button function and write - onClick="window.location.reload()" which means to reload the page. <br>
+        Reloading the page means rerunning the code. So when the user clicks, they can print random colors. <br>
+        Code look like <br>
+        <pre>
+          <code>
+            &ltbutton onClick="window.location.reload();">change Color&lt/button&gt
+          </code>
+        </pre>
+        - For load image inside of ellipse <br>
+        From "https://editor.p5js.org/jeremydouglass/sketches/T2ooOe6Nx", I know that WEBGL is required if we wan to load image. <br>
+        WEBGL enables web content to perform 2D and 3D rendering in an HTML canvas in browsers that support it without the use of plug-ins. <br>
+        
+          <code>
+            function myFunction(){
+              console.log("hyperlink");
+              location.href = "hyperlink";
+              window.open("hyperlink");
+            };
+          </code>
+        </pre>
+        <div>
+          <img
+            class="Screenshot"
+            src="Js.png" 
+            style="width: 600px; aspect-ratio: 1.5;"
+          />
+          <h2 style="text-align: center; font-size: 20px;">javascript page</h2>
+        </div>
+      </li>
+      <br>
+    </ol>
+    <h2>Ideas and Future Work</h2>
+      <ol class="directions">
+        <li>
+          Want to allow users to add the website by themselves
+        </li>
+        <li>
+          Users are able to click the icon with animation
+        </li>
+        <li>
+          When users add the website, that website's icon will automatically added in the extension
+        </li>
+    </ol>
+    <h2>Kudos</h2>
+      <ul>
+        <li>
+          Solve the error in consolde: <br>
+          https://stackoverflow.com/questions/36324333/refused-to-execute-inline-event-handler-because-it-violates-csp-sandbox
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
