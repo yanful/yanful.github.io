@@ -82,6 +82,7 @@
         - Sketch 2: I want to change colors on mouse click the button, but the color continue change even if I didn’t click the button<br>
         - Sketch 2: I don't know how to add button that click to change color on HTML page<br>
         - Sketch 3: I couldn't load image inside of ellipse<br>
+        - Sketch 6: When I move the mouse over the area above the piano keys, the color of the piano keys darkens to show that I am clicking on the piano keys. I only want the keys to darken when the user moves the mouse cursor over the piano keys <br>
       </li>
       <br>
       <li>How I resolved these issues: <br>
@@ -100,43 +101,41 @@
         - For load image inside of ellipse <br>
         From "https://editor.p5js.org/jeremydouglass/sketches/T2ooOe6Nx", I know that WEBGL is required if we wan to load image. <br>
         WEBGL enables web content to perform 2D and 3D rendering in an HTML canvas in browsers that support it without the use of plug-ins. <br>
-        
+        <br>
+        - For piano keys: <br>
+        Checking the if statement and using  && to add more rules, the code will be like : <pre>
           <code>
-            function myFunction(){
-              console.log("hyperlink");
-              location.href = "hyperlink";
-              window.open("hyperlink");
-            };
+            if (mouseX > x && mouseX < x + w && mouseY < height && mouseY > 200) {
           </code>
         </pre>
-        <div>
-          <img
-            class="Screenshot"
-            src="Js.png" 
-            style="width: 600px; aspect-ratio: 1.5;"
-          />
-          <h2 style="text-align: center; font-size: 20px;">javascript page</h2>
-        </div>
       </li>
       <br>
     </ol>
     <h2>Ideas and Future Work</h2>
       <ol class="directions">
         <li>
-          Want to allow users to add the website by themselves
+          Sketch 4: Want to allow users to control tellurion by clicking Up, down, left and right four keys
         </li>
         <li>
-          Users are able to click the icon with animation
+          Sketch 5: Want to add more animation
         </li>
         <li>
-          When users add the website, that website's icon will automatically added in the extension
+          Sketch 6: Want to link piano keys with our keyboard
         </li>
     </ol>
     <h2>Kudos</h2>
       <ul>
         <li>
-          Solve the error in consolde: <br>
-          https://stackoverflow.com/questions/36324333/refused-to-execute-inline-event-handler-because-it-violates-csp-sandbox
+          Sketch 3: Solve the error in consolde: <br>
+          https://editor.p5js.org/jeremydouglass/sketches/T2ooOe6Nx
+        </li>
+        <br>
+        <li>
+          Reference: <br>
+          https://editor.p5js.org/Omega/sketches/By55siEV7<br>
+          https://editor.p5js.org/jeremydouglass/sketches/T2ooOe6Nx<br>
+          https://editor.p5js.org/monniqian/sketches/TwckaaeGl<br>
+
         </li>
       </ul>
     </div>
