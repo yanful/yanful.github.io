@@ -1,0 +1,224 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./writeup.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <nav>
+        <ul>
+            <li><a href="/index.html" style="font-size: 30px; font-weight:bold;">Back</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="recipe-container">
+      <a href="./gallery.html"><h2 style="text-align: center; color: antiquewhite; font-size: 30px; font-weight: bolder;">Click here to Gallery!</h2></a>
+      <h2>Overview and Usage</h2>
+      <ul style="line-height: 1.5;">
+        <li>This game is about the player manipulating Mario using the "w" jump and "s" down keys to avoid obstacles. </li>
+        <li>Every player only have 1 life. The farther you run, the higher the score. </li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen_Recording_2023-01-31_at_1_32_11_PM_AdobeExpress.gif"
+          />
+          <h2 style="text-align: center; font-size: 20px;">Gallery Gif</h2>
+        </div>
+      </ul>
+      <h2>Development Process</h2>
+      <ol class="directions">
+        <li>Installing and using a library<br>
+          - Following the instruction to install p5 library and create index.html file<br>
+          - Go to branchwelder/example-game to copy and paste the content from index.html
+        </li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="./Screen Shot 2023-02-13 at 3.27.54 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> index.html</h2>
+        </div>
+        <li>
+          Local Development with Web Dev Server <br>
+          Install web-dev-server by using npm install --save-dev @web/dev-server. Then, editing the package.json file with start, build, and deploy scripts and use “npm run start” in terminal
+        </li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="./Screen Shot 2023-02-13 at 3.34.34 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> package.json file</h2>
+        </div>
+        <li>Bundling with Rollup <br>
+            - Install Rollup with "npm install rollup --save-dev" and Create the rollup.config.js file
+        </li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="./Screen Shot 2023-02-13 at 3.54.52 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> rollup.config.js file</h2>
+        </div>
+        <li>Using .gitignore<br>
+          - Create a .gitignore not file that not include my node_modules or dist folders in github
+        </li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="./Screen Shot 2023-02-13 at 4.00.36 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;">.gitignore file </h2>
+        </div>
+        <li>Editing the javascript page with p5, p5.play, planck.min librarys<br>
+          - Create Animation for mario and set up the canvas size <br>
+          - Create groundSprites and obstacleSprites <br>
+          - Control the mario action with "w" and "s" <br>
+          - Create the interface if "gameover"
+        </li>
+        <div>
+          <img
+            class="Screenshot"
+            src="./Screen Shot 2023-02-13 at 4.07.09 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;">1st part of js file</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="./Screen Shot 2023-02-13 at 4.07.49 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;">2nd part of js file</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="./Screen Shot 2023-02-13 at 4.07.59 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;">3rd part of js file</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="./Screen Shot 2023-02-13 at 4.09.58 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;">4th part of js file</h2>
+        </div>
+        <li>Deploying to Github Pages<br>
+          - Install the gh-pages package and add a deploy script to package.json. Run the deploy script with “npm run deploy”
+        </li>
+      </ol>
+      <br>
+      <br>
+    <h2>Issue Deep-Dive</h2>
+    <ol class="directions">
+      <li>The problem I encountered: <br>
+        - Library finding: I can't find out the correct p5 library to put in the HTML file<br>
+        - Set up process: I don't know why the "npm run deploy" is not working<br>
+        - P5.editor: I copy the code from p5.editor to js file, but it's not working<br>
+        - js file: canvas is little small; mario's Animation is not working<br>
+        - js file: using "if (groundSprites.overlap(player))", but this code not working <br>
+        - js file: keyDown function not working <br>
+        - js file: obstacle occurs too often<br>
+        - js file: I want obstacleSprites and groundSprites move from right to left when camera position moving <br>
+
+      </li>
+      <br>
+      <li>How I resolved these issues: <br>
+        - Library finding issue<br>
+        I just copy the code from https://github.com/branchwelder/example-game/blob/main/index.html <br>
+        <br>
+        - "npm run deploy" is not working <br>
+        I delete the whole js.file and start to clone the new repository. Following the step from instructor to figure the issue. 
+        <br><br>
+        - code from p5.editor to js file not working<br>
+        I using the 
+        <pre>
+          <code>
+            window.draw = () =>
+          </code>
+        </pre>
+        to replace the "function"<br>
+        <br>
+        - canvas is little small<br>
+        The code from https://workshops.hackclub.com/platformer/ is too small, so I use the windowWidth and windowHeight to create canvas. <br>
+        <br>
+        - mario's Animation is not working <br>
+        I upload 3 mario images to generate the animation and use:<pre>
+          <code>
+            window.preload = () => {
+              mario_running = loadAnimation("Capture1.png","Capture3.png","Capture4.png");
+            }
+          </code>
+        </pre>
+        <br><br>
+        - "if (groundSprites.overlap(player))" not working <br>
+        I create another function called "over":<pre>
+          <code>
+            function over(mario, groundSprites) {
+              mario.velocity.y = 0;
+              mario.position.y = height - 90;
+            }
+          </code>
+        </pre>
+        and use "over" function in the overlap like:<pre>
+          <code>
+            mario.overlap(groundSprites, over)
+          </code>
+        </pre>
+        <br><br>
+        - keyDown function not working <br>
+        Instead of keydown, I start to use if statement like: <code>
+          if (key == 'w') {
+        </code><br>
+        - obstacle occurs too often <br>
+        Reading the https://workshops.hackclub.com/platformer/, use the if statement to set up: <pre>
+          <code>
+            if (random() > 0.98) 
+          </code>
+        </pre><br>
+        - Want obstacleSprites and groundSprites move from right to left when camera position moving <br>
+        Using the for loop to change the position of obstacleSprites and groundSprites: <pre>
+          <code>
+            for (var i = 0; i < obstacleSprites.length; i++) {
+              obstacleSprites[i].position.x -= 5;
+            }
+            for (var i = 0; i < groundSprites.length; i++) {
+              groundSprites[i].position.x -= 5;
+            }
+          </code>
+        </pre>
+      </li>
+      <br>
+    </ol>
+    <h2>Ideas and Future Work</h2>
+      <ol class="directions">
+        <li>
+          Want to allow users to control mario with left and right keys
+        </li>
+        <li>
+          Want to add the monster from Mario's story
+        </li>
+        <li>
+          Dream version: Recreating classic Super Mario game!
+        </li>
+    </ol>
+    <h2>Kudos</h2>
+      <ul>
+        <li>
+          Professor hannah and TA help me a lot!<br>
+        </li>
+        <br>
+        <li>
+          Reference: <br>
+          https://workshops.hackclub.com/platformer/<br>
+          https://github.com/branchwelder/example-game/blob/main/index.htmlbr>
+
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
