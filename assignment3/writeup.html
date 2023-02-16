@@ -11,18 +11,18 @@
       </nav>
     </div>
     <div class="recipe-container">
-      <a href="./gallery.html"><h2 style="text-align: center; color: antiquewhite; font-size: 30px; font-weight: bolder;">Click here to Gallery!</h2></a>
+      <a href="./gallery.html"><h2 style="text-align: center; color: antiquewhite; font-size: 30px; font-weight: bolder;">Click here play game!</h2></a>
       <h2>Overview and Usage</h2>
       <ul style="line-height: 1.5;">
-        <li>This game is about the player manipulating Mario using the "w" jump and "s" down keys to avoid obstacles. </li>
+        <li>This game is about the player manipulating Mario using the "w" to jump to keep away from obstacles. </li>
         <li>Every player only have 1 life. The farther you run, the higher the score. </li>
         <br>
         <div>
           <img
             class="Screenshot"
-            src="Screen_Recording_2023-01-31_at_1_32_11_PM_AdobeExpress.gif"
+            src="Screen_Recording_2023-02-16_at_1_16_06_PM_AdobeExpress.gif"
           />
-          <h2 style="text-align: center; font-size: 20px;">Gallery Gif</h2>
+          <h2 style="text-align: center; font-size: 20px;">Game Gif</h2>
         </div>
       </ul>
       <h2>Development Process</h2>
@@ -82,28 +82,28 @@
         <div>
           <img
             class="Screenshot"
-            src="./Screen Shot 2023-02-13 at 4.07.09 PM.png"
+            src="./Screen Shot 2023-02-16 at 1.34.23 PM.png"
           />
           <h2 style="text-align: center; font-size: 20px;">1st part of js file</h2>
         </div>
         <div>
           <img
             class="Screenshot"
-            src="./Screen Shot 2023-02-13 at 4.07.49 PM.png"
+            src="./Screen Shot 2023-02-16 at 1.34.34 PM.png"
           />
           <h2 style="text-align: center; font-size: 20px;">2nd part of js file</h2>
         </div>
         <div>
           <img
             class="Screenshot"
-            src="./Screen Shot 2023-02-13 at 4.07.59 PM.png"
+            src="./Screen Shot 2023-02-16 at 1.34.47 PM.png"
           />
           <h2 style="text-align: center; font-size: 20px;">3rd part of js file</h2>
         </div>
         <div>
           <img
             class="Screenshot"
-            src="./Screen Shot 2023-02-13 at 4.09.58 PM.png"
+            src="./Screen Shot 2023-02-16 at 1.35.00 PM.png"
           />
           <h2 style="text-align: center; font-size: 20px;">4th part of js file</h2>
         </div>
@@ -124,6 +124,8 @@
         - js file: keyDown function not working <br>
         - js file: obstacle occurs too often<br>
         - js file: I want obstacleSprites and groundSprites move from right to left when camera position moving <br>
+        - js file: Mario jump with incorrect gravity <br>
+        - js file: mouseClicked Function is not working <br>
 
       </li>
       <br>
@@ -191,6 +193,12 @@
             }
           </code>
         </pre>
+        - Mario jump with incorrect gravity <br>
+        Changing the keypress('w') to kb.presses('w') because kb.presses will only work at the moment of pressing the button <br>
+        <br>
+        - mouseClicked Function is not working <br>
+        I search online and find out the function which called "mouseIsPressed" and use it in draw(). Then, I change remove(obstacleSprites) to remove() and command original mouseClicked Function. <br>
+        <br>
       </li>
       <br>
     </ol>
