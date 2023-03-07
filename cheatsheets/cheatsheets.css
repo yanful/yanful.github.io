@@ -1,8 +1,9 @@
 .picture {
-  width: 300px;
+  max-width: 300px;
   border-radius: 10px;
   aspect-ratio: 0.8;
   display: flex;
+  width: 100%;
 }
 
 .bio-container {

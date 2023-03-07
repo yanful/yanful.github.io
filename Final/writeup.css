@@ -19,7 +19,8 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .page-container {
@@ -86,4 +87,8 @@ nav ul li a:hover::after{
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.5rem
+ }
+
+ pre {
+  overflow:auto;
  }
