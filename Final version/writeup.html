@@ -1,0 +1,264 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./writeup.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <nav>
+        <ul>
+            <li><a href="/index.html" style="font-size: 30px; font-weight:bold;">Back</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="recipe-container">
+      <a href="https://yanful.github.io/438Final/"><h2 style="text-align: center; color: rgb(45, 218, 82); font-size: 30px; font-weight: bolder;">Start to play Game!</h2></a>
+      <a href="https://github.com/yanful/438Final"><h2 style="text-align: center; color: rgb(229, 195, 151); font-size: 20px; font-weight: bolder;">Game Repository</h2></a>
+      <h2>Overview and Usage</h2>
+      <ul style="line-height: 1.5;">
+        <li>This game is improved based on the MP3 - Mario Game. I added more functions inside like Mario could move right, left and jump. There are 2 monsters: Gooma and Bald Cleft. Mario could kill Gooma by jumping on Gooma and dying by contacting monsters face to face. </li>
+        <li>Players will have the score start with 3 at the beginning. Score will += 1 when Mario kills Gooma by jumping on Gooma. Mario could shoot bullets to kill Gooma(Bald Cleft couldn’t be killed). Each bullet will deduct 1 point from the score. If scores lower than 0, the game will be over. </li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen_Recording_2023-03-06_at_10_26_45_PM_AdobeExpress.gif"
+          />
+          <h2 style="text-align: center; font-size: 20px;">Game Gif</h2>
+        </div>
+      </ul>
+      <h2>Development Process</h2>
+      <ol class="directions">
+        <li>Clone MP3 file<br>
+          - Set up the new repository in Github<br>
+          - Clone MP3 file into the new repository
+        </li>
+        <br>
+        <li>Develop the Javascript Page<br>
+          - Transfering Gif into the Png file and LoadAnimation inside of the JS file.<br>
+          - Improving the Gameover interface. <br>
+          - Set more conditional to make Mario moving right, left and able to jump only one time. <br>
+          - Fixing the “collusion” issue with overlap.
+          - Changing the camera position and velocity. 
+          - Create a shooting function and 2 new monsters. 
+          - Thinking about the way to allow Mario to kill Gooma by jumping on its head. 
+        </li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen Shot 2023-03-06 at 10.45.16 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Javascript</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen Shot 2023-03-06 at 10.49.00 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Javascript</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen Shot 2023-03-06 at 10.49.10 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Javascript</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen Shot 2023-03-06 at 10.49.24 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Javascript</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen Shot 2023-03-06 at 10.49.33 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Javascript</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen Shot 2023-03-06 at 10.49.42 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Javascript</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen Shot 2023-03-06 at 10.49.53 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Javascript</h2>
+        </div>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen Shot 2023-03-06 at 10.50.05 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> Javascript</h2>
+        </div>
+
+        <li>Improving with Rollup <br>
+            - Inserting all of images into "copy" part
+        </li>
+        <br>
+        <div>
+          <img
+            class="Screenshot"
+            src="Screen Shot 2023-03-02 at 1.17.17 PM.png"
+          />
+          <h2 style="text-align: center; font-size: 20px;"> rollup.config.js file</h2>
+        </div>
+        <br>
+        <li>Deploying to Github Pages<br>
+          - Deleting the node_modules from dist and Run the deploy script with “npm run deploy” again to deploy my game
+        </li>
+      </ol>
+      <br>
+      <br>
+    <h2>Issue Deep-Dive</h2>
+    <ol class="directions">
+      <li>The problem I encountered: <br>
+        - Animation set up: I couldn't add gif into my Game directly<br>
+        - Animation speed up: the animation will run faster and faster<br>
+        - Spinning issue: The mario will start spin after he contact with Gooma <br>
+        - how to kills Gooma: No idea how to make Mario kills Gooma by jumping on Gooma<br>
+        - Bullet issue: After Mario shoot bullets, the mario will start to spin again<br>
+        - Moving issue: After I press "A" or "D", Mario could only move left or right less than 1 second. I want Mario able to continue moving until player release the keys. <br>
+        - Mario.Remove() issue: Before MVP, mario.remove() and mariobullet[i].remove is working well. But it's not working this week. <br>
+        - Invisible Mariobullet: Invisible Mariobullet[i] will destory the monsters when I restart the game <br>
+      </li>
+      <br>
+      <li>How I resolved these issues: <br>
+        - Animation set up<br>
+        Save the Gif and convert to png files. Then, using "loadAnimation" to insert each single png file.  <br>
+        <br>
+        - Animation speed up<br>
+        In the setup function, creating the new Group() and use ".addAni" to add ("random name", the variable that I store the loadAnimation); <br>
+        In the draw function, write the code like:
+        <pre>
+          <code>
+            if (random() > 0.995) {
+              let new_Gooma = new GoomaMonster.Sprite(width, height-100, 100, 100);
+              new_Gooma.scale = 0.3;
+            }
+          </code>
+        </pre>
+        <br><br>
+        - Spining issue<br>
+        Instead of using the collision, I use the overlap.<br>
+        <br>
+        - How to kills Gooma<br>
+        Considering to create another condition when mario overlap with Gooma, like:
+        <pre>
+          <code>
+            if (mario.overlap(GoomaMonster[i])) {
+              // if (mario.overlap(GoomaMonster[i], {preventOverlap: true})) {
+                // check if the player is jumping
+                if (mario.position.y < height-90) {
+                  // the player is jumping, remove the monster
+                  GoomaMonster[i].remove();
+                  score = score + 1;
+                } else {
+                  // the player is not jumping, end the game
+                  endGame();
+                }
+              } else {
+                GoomaMonster[i].position.x -= 0.5;
+              }
+            }
+          </code>
+        </pre>
+        <br>
+        <br>
+        - Bullet issue<br>
+        I find out the Push() will cause this problem. So I set up the bullet.velocity.x; bullet.velocity.y; bullet.position.y  before push the bullets
+        <br><br>
+        - Moving issue <br>
+        I addEventListener with ‘keydown':<pre>
+          <code>
+            document.addEventListener('keydown', function(event) {
+              if (event.key === 'a') {
+                mario.velocity.x = -10;
+              }
+              if (event.key === 'd') {
+                mario.velocity.x = 1;
+              }
+            });
+          </code>
+        </pre>
+        <br>
+        <br>
+        - Mario.Remove() issue <br>
+        Seems like I was trying to remove a sprite that has already been removed from the group. Therefore, I tried to make mario invisible, set mario's velocity to zero and set mario to its original position.<br>
+        For MarioBullets, I tried to make mario invisible<pre>
+          <code>
+            mario.visible = false;
+            mario.velocity.x = 0;
+            mario.velocity.y = 0;
+            mario.position.x = 50;
+            mario.position.y = height-90;
+            for (var i = 0; i < MarioBullets.length; i++) {
+              MarioBullets[i].visible = false;
+            }
+          </code>
+        </pre>
+        - Invisible Mariobullet<br>
+        When player start the game, create a delay of 5 seconds before creating a new GoomaMonster and FlyMonster<pre>
+          <code>
+            let monsterDelay = -1;
+            if (monsterDelay === -1) {
+              monsterDelay = frameCount + 60 * 5;
+            }
+            if (frameCount >= monsterDelay) {
+              if (random() > 0.995) {
+                let new_Gooma = new GoomaMonster.Sprite(width, height-100, 100, 100);
+              // new GoomaMonster.Sprite(width, height-100, 50, 50);
+              // Gooma = createSprite(width,height-100,50,50);
+              // Gooma.addAnimation("running", Gooma_running);
+                new_Gooma.scale = 0.3;
+              // GoomaMonster.add(Gooma)
+              }
+              if (random() > 0.995) {
+                let new_fly = new flyMonster.Sprite(width, random(height-400, height - 200), 100, 100);
+                new_fly.scale = 0.3;
+              }
+            }
+          </code>
+        </pre>
+
+      </li>
+      <br>
+    </ol>
+    <h2>Ideas and Future Work</h2>
+      <ol class="directions">
+        <li>
+          Want to create the game levels with different terrains. 
+        </li>
+        <li>
+          Want to stop Mario’s animation if Mario is not moving.
+        </li>
+        <li>
+          Want to let monsters have intelligence that can track Mario. 
+        </li>
+        <li>
+          Want to completely remove Mario and Mario Bullets, not set it invisible
+        </li>
+    </ol>
+    <h2>Kudos</h2>
+      <ul>
+        <li>
+          Professor hannah help me a lot!<br>
+        </li>
+        <br>
+        <li>
+          Reference: <br>
+          MP3<br>
+          https://workshops.hackclub.com/platformer/<br>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
